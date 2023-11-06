@@ -1,0 +1,24 @@
+Oct 28 10:22:03 PM  2023-10-28 13:22:03.069520: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+Oct 28 10:22:03 PM  To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Oct 28 10:22:03 PM  2023-10-28 13:22:03.164944: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2649985000 Hz
+Oct 28 10:22:03 PM  2023-10-28 13:22:03.165734: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55dc55b5fb40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+Oct 28 10:22:03 PM  2023-10-28 13:22:03.165797: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+Oct 28 10:22:04 PM  Traceback (most recent call last):
+Oct 28 10:22:04 PM    File "mnist.py", line 21, in <module>
+Oct 28 10:22:04 PM      model = load_model('./model.h5')#学習済みモデルをロード
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/saving/save.py", line 182, in load_model
+Oct 28 10:22:04 PM      return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/saving/hdf5_format.py", line 194, in load_model_from_hdf5
+Oct 28 10:22:04 PM      training_config, custom_objects))
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/saving/saving_utils.py", line 211, in compile_args_from_training_config
+Oct 28 10:22:04 PM      optimizer = optimizers.deserialize(optimizer_config)
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/optimizers.py", line 869, in deserialize
+Oct 28 10:22:04 PM      printable_module_name='optimizer')
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/utils/generic_utils.py", line 347, in deserialize_keras_object
+Oct 28 10:22:04 PM      config, module_objects, custom_objects, printable_module_name)
+Oct 28 10:22:04 PM    File "/opt/render/project/src/.venv/lib/python3.7/site-packages/tensorflow/python/keras/utils/generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+Oct 28 10:22:04 PM      raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+Oct 28 10:22:04 PM  ValueError: Unknown optimizer: Custom>Adadelta
+Oct 28 10:22:39 PM  ==> Using Node version 14.17.0 (default)
+Oct 28 10:22:39 PM  ==> Docs on specifying a Node version: https://render.com/docs/node-version
+Oct 28 10:22:44 PM  ==> Running 'python mnist.py'

@@ -42,7 +42,7 @@ def upload_file():
             data = np.array([img])
 
             #変換したデータをモデルに渡して予測する
-            predicted = model.predict(data)[0]
+            predicted = model.predict(data[0])[0]
             pred_answer = "これは " + predicted + " です"
 
             return render_template("index.html",answer=pred_answer)

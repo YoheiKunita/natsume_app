@@ -42,11 +42,11 @@ def upload_file():
             data = np.array([img])
 
             #変換したデータをモデルに渡して予測する
-            predicted = np.round(model.predict(data)[0])
-            if predicted == 0:
-                pred_answer = "これは良い実です"
+            predicted = model.predict(data)[0]
+            if np.round(predicted) > 0:
+                pred_answer = str(predicted) + "これは良い実です。"
             else:
-                pred_answer = "これは悪い実です"
+                pred_answer = str(predicted) + "これは悪い実です"
 
             return render_template("index.html",answer=pred_answer)
 

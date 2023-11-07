@@ -43,7 +43,7 @@ def upload_file():
 
             #変換したデータをモデルに渡して予測する
             predicted = model.predict(data)[0]
-            pred_answer = "これは " + np.array(predicted, dtype = "<U") + " です"
+            pred_answer = "これは " + type(predicted) + str(predicted) + " です"
 
             return render_template("index.html",answer=pred_answer)
 

@@ -43,10 +43,10 @@ def upload_file():
 
             #変換したデータをモデルに渡して予測する
             predicted = model.predict(data)[0]
-            if np.round(predicted) > 0:
-                pred_answer = str(predicted) + "これは良い実です。"
+            if np.round(predicted) < 0.5:
+                pred_answer = str(predicted) + " これは良い実です。"
             else:
-                pred_answer = str(predicted) + "これは悪い実です"
+                pred_answer = str(predicted) + " これは悪い実です"
 
             return render_template("index.html",answer=pred_answer)
 
